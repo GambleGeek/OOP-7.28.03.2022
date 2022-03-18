@@ -14,19 +14,23 @@
 
 <table>
     <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Passport number</th>
+        <th>Packages</th>
     </tr>
 
-    <c:forEach var="order" items="${allOrders}">
+    <c:forEach var="tourist" items="${allTourists}">
 
         <tr>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
+            <td>${tourist.id}</td>
+            <td>${tourist.name}</td>
+            <td>${tourist.age}</td>
+            <td>${tourist.address}</td>
+            <td>${tourist.passport_number}</td>
+            <td>${tourist.tourPackages}</td>
         </tr>
 
     </c:forEach>

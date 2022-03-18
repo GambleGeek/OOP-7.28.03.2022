@@ -10,23 +10,23 @@
 </head>
 <body>
 
-<h2>All </h2>
+<h2>All Tourists</h2>
 
 <table>
     <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Id</th>
+        <th>Avia Ticket</th>
+        <th>Tour_package</th>
+        <th>Tourist</th>
     </tr>
 
-    <c:forEach var="order" items="${allOrders}">
+    <c:forEach var="tourpackages" items="${allTourPackages}">
 
         <tr>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
+            <td>${tourpackages.id}</td>
+            <td>${tourpackages.aviaTicketTourPackage_id}</td>
+            <td>${tourpackages.tour_package_number}</td>
+            <td>${tourpackages.tourist}</td>
         </tr>
 
     </c:forEach>

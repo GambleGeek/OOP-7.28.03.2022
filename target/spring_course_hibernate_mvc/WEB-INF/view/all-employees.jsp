@@ -18,6 +18,7 @@
         <th>Address</th>
         <th>Client_number</th>
         <th>Tel_number</th>
+        <th>Position</th>
     </tr>
 
     <c:forEach var="employee" items="${allEmployees}">

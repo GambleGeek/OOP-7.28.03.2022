@@ -14,21 +14,15 @@
 
 <table>
     <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Id</th>
+        <th>TourType</th>
     </tr>
 
-    <c:forEach var="order" items="${allOrders}">
-
+    <c:forEach var="tourType" items="${allTourTypes}">
         <tr>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
+            <td>${tourType.id}</td>
+            <td>${tourType.tour_type}</td>
         </tr>
-
     </c:forEach>
 </table>
 

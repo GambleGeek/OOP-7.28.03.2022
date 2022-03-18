@@ -14,21 +14,23 @@
 
 <table>
     <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>ID</th>
+        <th>Employee</th>
+        <th>Tour</th>
+        <th>Description</th>
+        <th>Execution time</th>
+        <th>Status</th>
     </tr>
 
-    <c:forEach var="order" items="${allOrders}">
-
+    <c:forEach var="tourTask" items="${allTourTasks}">
         <tr>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
+            <td>${tourTask.id}</td>
+            <td>${tourTask.employee}</td>
+            <td>${tourTask.tour}</td>
+            <td>${tourTask.description}</td>
+            <td>${tourTask.executionTime}</td>
+            <td>${tourTask.status}</td>
         </tr>
-
     </c:forEach>
 </table>
 

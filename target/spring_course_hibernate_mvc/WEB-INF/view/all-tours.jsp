@@ -14,21 +14,29 @@
 
 <table>
     <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Tour number</th>
+        <th>Tour type</th>
+        <th>Country</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Program number</th>
     </tr>
 
-    <c:forEach var="order" items="${allOrders}">
-
+    <c:forEach var="tour" items="${allTours}">
         <tr>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
+            <td>${tour.id}</td>
+            <td>${tour.name}</td>
+            <td>${tour.status}</td>
+            <td>${tour.tour_number}</td>
+            <td>${tour.tourType}</td>
+            <td>${tour.country}</td
+            <td>${tour.start_date}</td>
+            <td>${tour.end_date}</td>
+            <td>${tour.program}</td>
         </tr>
-
     </c:forEach>
 </table>
 

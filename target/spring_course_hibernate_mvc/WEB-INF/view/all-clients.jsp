@@ -22,12 +22,27 @@
 
     <c:forEach var="client" items="${allClients}">
 
+            <c:url var="updateButton" value="/updateClient">
+                <c:param name="clientId" value="${client.id}"/>
+            </c:url>
+
+            <c:url var="deleteButton" value="/deleteClient">
+                <c:param name="clientId" value="${client.id}"/>
+            </c:url>
+
         <tr>
             <td>${client.name}</td>
             <td>${client.address}</td>
             <td>${client.client_number}</td>
             <td>${client.tel_number}</td>
+            <td>
+                <input type="button" value="Update"
+                       onclick="window.location.href='${updateButton}'"/>
+                <input type="button" value="Delete"
+                       onclick="window.location.href='${deleteButton}'"/>
+            </td>
         </tr>
+
 
     </c:forEach>
 </table>

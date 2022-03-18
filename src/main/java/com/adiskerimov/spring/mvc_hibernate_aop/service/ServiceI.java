@@ -90,4 +90,8 @@ public interface ServiceI {
     public List<Tour> getAllTours();
 
     public void saveTour(Tour tour);
+
+    public Client get(int id);
+
+    public void delete(int id);
 }

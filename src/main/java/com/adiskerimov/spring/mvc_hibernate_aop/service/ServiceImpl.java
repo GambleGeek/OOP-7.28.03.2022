@@ -245,6 +245,7 @@ public class ServiceImpl implements ServiceI{
     }
 
     @Override
+    @Transactional
     public List<Room> getAllRooms() {
         return roomDAO.getAllRooms();
     }
@@ -326,4 +327,18 @@ public class ServiceImpl implements ServiceI{
     public void saveTour(Tour tour) {
         tourDAO.saveTour(tour);
     }
+
+    @Override
+    @Transactional
+    public Client get(int id) {
+        return clientDAO.get(id);
+    }
+
+    @Override
+    @Transactional
+    public void delete(int id) {
+        clientDAO.deleteClient(id);
+    }
+
+
 }

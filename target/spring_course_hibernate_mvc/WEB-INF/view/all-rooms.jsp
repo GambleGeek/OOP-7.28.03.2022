@@ -14,10 +14,12 @@
 
 <table>
     <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Id</th>
+        <th>Hotel name</th>
+        <th>Arrival</th>
+        <th>Category</th>
+        <th>Departure</th>
+        <th>Place in hotel</th>
     </tr>
 
     <c:forEach var="room" items="${allRooms}">

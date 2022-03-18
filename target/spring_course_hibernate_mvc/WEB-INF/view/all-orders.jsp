@@ -13,20 +13,19 @@
 
 <table>
     <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Client_number</th>
-        <th>Tel_number</th>
+        <th>Id</th>
+        <th>Order Number</th>
+        <th>Tour</th>
+        <th>Employee</th>
     </tr>
 
-    <c:forEach var="employee" items="${allEmployees}">
+    <c:forEach var="order" items="${allOrders}">
 
         <tr>
-            <td>${employee.name}</td>
-            <td>${employee.address}</td>
-            <td>${employee.client_number}</td>
-            <td>${employee.tel_number}</td>
-            <td>${employee.position.position}</td>
+            <td>${order.id}</td>
+            <td>${order.order_number}</td>
+            <td>${order.tour}</td>
+            <td>${order.employee}</td>
         </tr>
 
     </c:forEach>

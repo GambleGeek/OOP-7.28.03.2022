@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -42,10 +43,28 @@ public class MyController {
     public String saveClient(@ModelAttribute("newClient")
                              @Valid final Client client,
                              final BindingResult bindingResult){
-        if(bindingResult.hasFieldErrors()){
+        if (bindingResult.hasFieldErrors()){
             return "client-info";
+
+        }else{
+            serviceI.saveClient(client);
+            return "redirect:/clientList";
         }
-        serviceI.saveClient(client);
+    }
+
+    @RequestMapping("/updateClient")
+    public String updateClient(@RequestParam("clientId") int id, Model model){
+
+        Client client = serviceI.get(id);
+        model.addAttribute("newClient", client);
+
+        return "client-info";
+    }
+
+    @RequestMapping("/deleteClient")
+    public String deleteClient(@RequestParam("clientId") int id){
+        serviceI.delete(id);
+
         return "redirect:/clientList";
     }
 

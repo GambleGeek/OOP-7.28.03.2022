@@ -14,19 +14,29 @@
 
 <table>
     <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>ID</th>
+        <th>Flight number</th>
+        <th>Tour</th>
+        <th>Air company</th>
+        <th>Departure date</th>
+        <th>Departure time</th>
+        <th>Departure city</th>
+        <th>Arrival city</th>
+        <th>Direction</th>
     </tr>
 
-    <c:forEach var="order" items="${allOrders}">
+    <c:forEach var="tourflight" items="${allTourFlights}">
 
         <tr>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
+            <td>${tourflight.id}</td>
+            <td>${tourflight.departure_date}</td>
+            <td>${tourflight.air_company}</td>
+            <td>${tourflight.arrival_city}</td>
+            <td>${tourflight.departure_city}</td>
+            <td>${tourflight.departure_time}</td>
+            <td>${tourflight.direction}</td>
+            <td>${tourflight.flight_number}</td>
+            <td>${tourflight.tour}</td>
         </tr>
 
     </c:forEach>

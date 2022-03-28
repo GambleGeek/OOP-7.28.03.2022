@@ -1,43 +1,29 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!Doctype html>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Employees</title>
+    <title>Document</title>
 </head>
 <body>
 
-<h2>All Employees</h2>
+<h3>Information for all employees</h3>
+<br><br>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Client_number</th>
-        <th>Tel_number</th>
-        <th>Position</th>
-    </tr>
-
-    <c:forEach var="employee" items="${allEmployees}">
-
-        <tr>
-            <td>${employee.name}</td>
-            <td>${employee.address}</td>
-            <td>${employee.client_number}</td>
-            <td>${employee.tel_number}</td>
-            <td>${employee.position.position}</td>
-        </tr>
-
-    </c:forEach>
-</table>
-
-<br>
-
-<input type="button" value="Add"
-       onclick="window.location.href = 'addNewEmployee'"/>
+<security:authorize access="hasRole('HR')">
+<input type="button" value="Salary"
+onclick="window.location.href = 'hr_info'">
+Only for HR staff
+</security:authorize>
+<br><br>
+<security:authorize access="hasRole('MANAGER')">
+<input type="button" value="Salary"
+onclick="window.location.href = 'manager_info'">
+Only for Manager staff
+</security:authorize>
 
 </body>
 </html>

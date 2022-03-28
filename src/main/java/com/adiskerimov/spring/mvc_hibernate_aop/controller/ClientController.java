@@ -16,7 +16,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-public class MyController {
+@RequestMapping("/client")
+public class ClientController {
 
     @Autowired
     private ServiceI serviceI;
@@ -67,35 +68,6 @@ public class MyController {
         serviceI.delete(id);
 
         return "redirect:/clientList";
-    }
-
-    @RequestMapping("/employeeList")
-    public String showAllEmployees(Model model){
-
-        List<Employee> allEmployees = serviceI.getAllEmployees();
-        model.addAttribute("allEmployees", allEmployees);
-
-        return "all-employees";
-    }
-
-    @RequestMapping("/addNewEmployee")
-    public String addNewEmployee(Model model){
-
-        Employee employee = new Employee();
-        model.addAttribute("newEmployee", employee);
-
-        return "employee-info";
-    }
-
-    @RequestMapping("/saveEmployee")
-    public String saveEmployee(@ModelAttribute("newEmployee")
-                             @Valid final Employee employee,
-                             final BindingResult bindingResult){
-        if(bindingResult.hasFieldErrors()){
-            return "employee-info";
-        }
-        serviceI.saveEmployee(employee);
-        return "redirect:/employeeList";
     }
 
     @GetMapping("/")

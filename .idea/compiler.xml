@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="18.03-OOPlab6" />
         <module name="spring_course_hibernate_mvc" />
         <module name="OOP-lab5-AdisKerimov-main" />
+        <module name="28.03-OOPlab7" />
       </profile>
     </annotationProcessing>
   </component>

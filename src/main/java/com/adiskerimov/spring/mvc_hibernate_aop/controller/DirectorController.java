@@ -1,7 +1,6 @@
 package com.adiskerimov.spring.mvc_hibernate_aop.controller;
 
 import com.adiskerimov.spring.mvc_hibernate_aop.entity.Client;
-import com.adiskerimov.spring.mvc_hibernate_aop.entity.Employee;
 import com.adiskerimov.spring.mvc_hibernate_aop.service.ServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,13 +15,17 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping("/client")
-public class ClientController {
+@RequestMapping("/director")
+public class DirectorController {
 
     @Autowired
     private ServiceI serviceI;
 
-    @RequestMapping("/clientList")
+    public String menu(){
+        return "view-for-director";
+    }
+
+    @GetMapping("/clientList")
     public String showAllClients(Model model){
 
         List<Client> allClients = serviceI.getAllClients();
@@ -57,7 +60,7 @@ public class ClientController {
     @RequestMapping("/updateClient")
     public String updateClient(@RequestParam("clientId") int id, Model model){
 
-        Client client = serviceI.get(id);
+        Client client = serviceI.getClient(id);
         model.addAttribute("newClient", client);
 
         return "client-info";
@@ -67,22 +70,6 @@ public class ClientController {
     public String deleteClient(@RequestParam("clientId") int id){
         serviceI.delete(id);
 
-        return "redirect:/clientList";
+        return "redirect:/director/clientList";
     }
-
-    @GetMapping("/")
-    public String getInfoForAllEmps(){
-        return "all-employees";
-    }
-
-    @GetMapping("/hr_info")
-    public String getInfoOnlyForHR(){
-        return "view-for-hr";
-    }
-
-    @GetMapping("/manager_info")
-    public String getInfoOnlyForManager(){
-        return "view-for-manager";
-    }
-
 }

@@ -17,16 +17,16 @@
 
     <form:hidden path="id"/>
     Name <form:input path="name"/>
-<%--    <form:errors path="name"/>--%>
+    <form:errors path="name"/>
     <br><br>
     Address <form:input path="address"/>
-<%--    <form:errors path="address"/>--%>
+    <form:errors path="address"/>
     <br><br>
     Client number <form:input path="client_number"/>
-<%--    <form:errors path="client_number"/>--%>
+    <form:errors path="client_number"/>
     <br><br>
     Telephone <form:input path="tel_number"/>
-<%--    <form:errors path="tel_number"/>--%>
+    <form:errors path="tel_number"/>
     <br><br>
     <input type="submit" value="OK">
 

@@ -22,11 +22,11 @@
 
     <c:forEach var="client" items="${allClients}">
 
-            <c:url var="updateButton" value="/updateClient">
+            <c:url var="updateButton" value="/director/updateClient">
                 <c:param name="clientId" value="${client.id}"/>
             </c:url>
 
-            <c:url var="deleteButton" value="/deleteClient">
+            <c:url var="deleteButton" value="/director/deleteClient">
                 <c:param name="clientId" value="${client.id}"/>
             </c:url>
 

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h3>Here you can see all salaries</h3>
+<h3>Here you can see all management features about sales</h3>
 
 </body>
 </html>

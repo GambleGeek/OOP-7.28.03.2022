@@ -8,16 +8,16 @@ public class MyController {
 
     @GetMapping("/")
     public String getInfoForAllEmps(){
-        return "all-employees";
+        return "basic";
     }
 
     @GetMapping("/hr_info")
     public String getInfoOnlyForHR(){
-        return "view-for-hr";
+        return "view-for-tour-creator";
     }
 
     @GetMapping("/manager_info")
     public String getInfoOnlyForManager(){
-        return "view-for-manager";
+        return "view-for-tour-manager";
     }
 }

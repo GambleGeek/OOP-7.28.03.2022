@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h3>Here you can see perfomance of your employees</h3>
+<h3>Here you can see all about tour management</h3>
 
 </body>
 </html>

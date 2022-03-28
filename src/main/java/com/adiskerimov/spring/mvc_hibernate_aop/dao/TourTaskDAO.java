@@ -10,4 +10,8 @@ public interface TourTaskDAO {
 
     public void saveTourTask(TourTask tourTask);
 
+    public void deleteTourTask(int id);
+
+    public TourTask get(int id);
+
 }

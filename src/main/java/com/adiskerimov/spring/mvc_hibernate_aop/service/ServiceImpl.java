@@ -340,5 +340,28 @@ public class ServiceImpl implements ServiceI{
         clientDAO.deleteClient(id);
     }
 
+    @Override
+    @Transactional
+    public TourTask getTourTask(int id) {
+        return tourTaskDAO.get(id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteTourTask(int id) {
+        tourTaskDAO.deleteTourTask(id);
+    }
+
+    @Override
+    @Transactional
+    public Tour getTour(int id) {
+        return tourDAO.get(id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteTour(int id) {
+        tourDAO.deleteTour(id);
+    }
 
 }

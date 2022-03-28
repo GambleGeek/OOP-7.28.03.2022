@@ -29,7 +29,22 @@ public class TourDAOImpl implements TourDAO{
     @Override
     public void saveTour(Tour tour) {
         Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(tour);
+    }
 
-        session.save(tour);
+    @Override
+    public void deleteTour(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Tour> query = session.createQuery("delete from Tour " +
+                "where id =:id");
+        query.setParameter("id", id);
+        query.executeUpdate();
+    }
+
+    @Override
+    public Tour get(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Tour tour = session.get(Tour.class, id);
+        return tour;
     }
 }

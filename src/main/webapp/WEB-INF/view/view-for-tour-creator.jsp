@@ -11,5 +11,11 @@
 
 <h3>Here you can see all about tour creation</h3>
 
+<input type="button" value="View tourList"
+       onclick="window.location.href = 'tourList'"/>
+
+<input type="button" value="View tourTaskList"
+       onclick="window.location.href = 'tourTaskList'"/>
+
 </body>
 </html>

@@ -91,7 +91,15 @@ public interface ServiceI {
 
     public void saveTour(Tour tour);
 
-    public Client getClient(int id);
+    public Object get(int id);
 
     public void delete(int id);
+
+    public TourTask getTourTask(int id);
+
+    public void deleteTourTask(int id);
+
+    public Tour getTour(int id);
+
+    public void deleteTour(int id);
 }

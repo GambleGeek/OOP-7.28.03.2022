@@ -10,16 +10,26 @@
 </head>
 <body>
 
-<h2>Client info</h2>
+<h2>Tour info</h2>
 <br>
 
-<form:form action="saveTour" modelAttribute="tour">
+<form:form action="addTour" modelAttribute="tour">
 
+    Contract:
     <form:input path="contracts"/>
+    <br>
+    Country:
     <form:input path="country"/>
+    <br>
+    End Date:
     <form:input path="end_date"/>
+    <br>
+    Events:
     <form:input path="events"/>
+    <br>
+    Program:
     <form:input path="program"/>
+    <br>
     <br><br>
     <input type="submit" value="OK">
 

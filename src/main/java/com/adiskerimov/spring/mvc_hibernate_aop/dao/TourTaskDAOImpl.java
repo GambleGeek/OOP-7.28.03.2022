@@ -29,6 +29,22 @@ public class TourTaskDAOImpl implements TourTaskDAO {
     @Override
     public void saveTourTask(TourTask tourTask) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(tourTask);
+        session.saveOrUpdate(tourTask);
+    }
+
+    @Override
+    public void deleteTourTask(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<TourTask> query = session.createQuery("delete from TourTask " +
+                "where id =:id");
+        query.setParameter("id", id);
+        query.executeUpdate();
+    }
+
+    @Override
+    public TourTask get(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        TourTask tourTask = session.get(TourTask.class, id);
+        return tourTask;
     }
 }

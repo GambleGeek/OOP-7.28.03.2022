@@ -13,13 +13,22 @@
 <h2>Client info</h2>
 <br>
 
-<form:form action="saveTour" modelAttribute="tour">
+<form:form action="saveTourTask" modelAttribute="tourTask">
 
-    <form:input path="contracts"/>
-    <form:input path="country"/>
-    <form:input path="end_date"/>
-    <form:input path="events"/>
-    <form:input path="program"/>
+    Description:
+    <form:input path="description"/>
+    <br>
+    Employee:
+    <form:input path="employee"/>
+    <br>
+    ExecutionTime:
+    <form:input path="executionTime"/>
+    <br>
+    Status:
+    <form:input path="status"/>
+    <br>
+    Tour:
+    <form:input path="tour"/>
     <br><br>
     <input type="submit" value="OK">
 

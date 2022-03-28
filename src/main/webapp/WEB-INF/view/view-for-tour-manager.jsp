@@ -11,5 +11,9 @@
 
 <h3>Here you can see all about tour management</h3>
 
+<input type="button" value="View tourList"
+       onclick="window.location.href = 'tourList'"/>
+
+
 </body>
 </html>

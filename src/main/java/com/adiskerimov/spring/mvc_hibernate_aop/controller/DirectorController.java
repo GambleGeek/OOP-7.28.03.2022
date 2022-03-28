@@ -1,15 +1,15 @@
 package com.adiskerimov.spring.mvc_hibernate_aop.controller;
 
 import com.adiskerimov.spring.mvc_hibernate_aop.entity.Client;
+import com.adiskerimov.spring.mvc_hibernate_aop.entity.Employee;
+import com.adiskerimov.spring.mvc_hibernate_aop.entity.Tour;
+import com.adiskerimov.spring.mvc_hibernate_aop.entity.TourTask;
 import com.adiskerimov.spring.mvc_hibernate_aop.service.ServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -53,14 +53,14 @@ public class DirectorController {
 
         }else{
             serviceI.saveClient(client);
-            return "redirect:/clientList";
+            return "redirect:/director/clientList";
         }
     }
 
     @RequestMapping("/updateClient")
     public String updateClient(@RequestParam("clientId") int id, Model model){
 
-        Client client = serviceI.getClient(id);
+        Client client = (Client) serviceI.get(id);
         model.addAttribute("newClient", client);
 
         return "client-info";
@@ -71,5 +71,79 @@ public class DirectorController {
         serviceI.delete(id);
 
         return "redirect:/director/clientList";
+    }
+
+    @GetMapping("/employeeList")
+    public String showAllEmployees(Model model){
+
+        List<Employee> allEmployees = serviceI.getAllEmployees();
+        model.addAttribute("allEmployees", allEmployees);
+
+        return "all-employees";
+    }
+
+    @RequestMapping("/addNewEmployee")
+    public String addNewEmployee(Model model){
+
+        Employee employee = new Employee();
+        model.addAttribute("newEmployee", employee);
+
+        return "employee-info";
+    }
+
+
+    @RequestMapping("/saveEmployee")
+    public String saveEmployee(@ModelAttribute("newEmployee")
+                             @Valid final Employee employee,
+                             final BindingResult bindingResult){
+        if (bindingResult.hasFieldErrors()){
+            return "employee-info";
+
+        }else{
+            serviceI.saveEmployee(employee);
+            return "redirect:/director/employeeList";
+        }
+    }
+
+    @RequestMapping("/updateEmployee")
+    public String updateEmployee(@RequestParam("employeeId") int id, Model model){
+
+        Employee employee = (Employee) serviceI.get(id);
+        model.addAttribute("newEmployee", employee);
+
+        return "employee-info";
+    }
+
+    @RequestMapping("/deleteEmployee")
+    public String deleteEmployee(@RequestParam("employeeId") int id){
+        serviceI.delete(id);
+
+        return "redirect:/director/employeeList";
+    }
+
+    @GetMapping("/tourtask/add")
+    public String addTourTask(Model model){
+        TourTask tourTask = new TourTask();
+        model.addAttribute("tourTask", tourTask);
+        return "tour-task-add";
+    }
+
+    @PostMapping("/tourtask")
+    public String saveTourTask(@RequestBody TourTask tourTask){
+        serviceI.saveTourTask(tourTask);
+        return "redirect:/";
+    }
+
+    @GetMapping("/tour/add")
+    public String addTour(Model model){
+        Tour tour = new Tour();
+        model.addAttribute("tour", tour);
+        return "tour-add";
+    }
+
+    @PostMapping("/tour")
+    public String saveTour(@RequestBody Tour tour){
+        serviceI.saveTour(tour);
+        return "redirect:/";
     }
 }

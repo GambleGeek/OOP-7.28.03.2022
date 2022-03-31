@@ -21,6 +21,7 @@ public class DirectorController {
     @Autowired
     private ServiceI serviceI;
 
+    @GetMapping("/")
     public String menu(){
         return "view-for-director";
     }

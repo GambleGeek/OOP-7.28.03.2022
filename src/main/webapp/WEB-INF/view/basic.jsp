@@ -20,21 +20,21 @@ Only for Director staff
 </security:authorize>
 
 <br><br>
-<security:authorize access="hasRole('TOUR_CREATOR')">
+<security:authorize access="hasRole('TOURCREATOR')">
 <input type="button" value="Tour Creation"
 onclick="window.location.href = 'tour-creator'">
 Only for TourCreator staff
 </security:authorize>
 <br><br>
 
-<security:authorize access="hasRole('TOUR_MANAGER')">
+<security:authorize access="hasRole('TOURMANAGER')">
 <input type="button" value="Tour Management"
 onclick="window.location.href = 'tour-manager'">
 Only for TourManager staff
 </security:authorize>
 <br><br>
 
-<security:authorize access="hasRole('SALES_MANAGER')">
+<security:authorize access="hasRole('SALESMANAGER')">
 <input type="button" value="Sales"
 onclick="window.location.href = 'sales-manager'">
 Only for Sales Manager staff

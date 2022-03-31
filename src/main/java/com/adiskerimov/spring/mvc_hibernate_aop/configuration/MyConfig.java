@@ -48,7 +48,7 @@ public class MyConfig {
     public LocalSessionFactoryBean sessionFactory(){
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("restAPI.lab");
+        sessionFactory.setPackagesToScan("com.adiskerimov.spring.mvc_hibernate_aop");
 
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty("hibernate.dialect",

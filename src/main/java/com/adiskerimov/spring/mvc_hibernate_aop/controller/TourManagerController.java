@@ -19,6 +19,7 @@ public class TourManagerController {
     @Autowired
     private ServiceI serviceI;
 
+    @GetMapping("/")
     public String menu(){
         return "view-for-tour-manager";
     }

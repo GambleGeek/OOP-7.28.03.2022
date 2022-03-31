@@ -41,10 +41,10 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").hasAnyRole(
-                        "SALES_MANAGER", "TOUR_MANAGER", "TOUR_CREATOR", "DIRECTOR")
-                .antMatchers("/sales/**").hasRole("SALES_MANAGER")
-                .antMatchers("/tour-information/**").hasRole("TOUR_MANAGER")
-                .antMatchers("/tour-creator/**").hasRole("TOUR_CREATOR")
+                        "SALESMANAGER", "TOURMANAGER", "TOURCREATOR", "DIRECTOR")
+                .antMatchers("/sales/**").hasRole("SALESMANAGER")
+                .antMatchers("/tour-information/**").hasRole("TOURMANAGER")
+                .antMatchers("/tour-creator/**").hasRole("TOURCREATOR")
                 .antMatchers("/director/**").hasRole("DIRECTOR")
                 .and().formLogin().permitAll();
     }
